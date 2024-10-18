@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Chancela</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header class="Inicio">
+        <div class="Governo">
+            <a href="https://www.gov.br/pt-br" class=" links">Portal do Governo Brasileiro</a>
+            <a href="#" class="links">Atualize sua Barra de Governo</a>
+        </div>
+        <section class="Inicio caixa">
+            <img src="http://intranet.depa.eb.mil.br/images/imagens/DEPA.png" alt="Símbolo da DEPA">
+            <div class="Inicio  Informação">
+                <p class="Inicio__texto__menor">Ministério da Defesa - Exército Brasileiro - DECEx</p>
+                <h2 class="Inicio__titulo">Diretoria de Educação Preparatória e Assistencial</h2>
+                <p class="Inicio__texto__maior">"SISTEMA COLÉGIO MILITAR DO BRASIL"</p>
+            </div>
+        </section>  
+    </header>
+
+    <nav class="menu">
+        
+        <ul class="menu__lista">
+            <li>
+                <a href="https://www.depa.eb.mil.br/perguntas-frequentes" class="links">Perguntas frequentes</a>
+            </li>
+            <li>
+                <a href="https://www.depa.eb.mil.br/fale-conosco" class="links">Fale Conosco</a>
+            </li>
+            <li>
+                <a href="https://avadepa.cmm.eb.mil.br/" class="links">AVA</a>
+            </li>
+            <li>
+                <a href="https://www.depa.eb.mil.br/link" class="links">Link</a>
+            </li>
+            <li>
+                <a href="https://www.eb.mil.br/" class="links">Exército</a>
+            </li>
+            <li>
+                <a href="https://www.eb.mil.br/web/rp/junte-se-a-nos" class="links">Junte-se a nós</a>
+            </li>
+        </ul>
+    </nav>
+        
+
+    <div id="dicas">
+        <h1>Validação de Documentos </h1>
+        <p>Preencha apenas os campos correspondentes ao documento que você deseja validar. Não é necessário fazer login ou ter cadastro</p>
+        <p style>Dicas:</p>
+        <p>• Atenção para não confundir o número "1" com a letra "L" minúscula ou a letra "o" com o número zero</p>
+        <p>• Atenção ao campo CPF, insira somente os 11 dígitos numéricos que deseja consultar</p>
+    </div>
+
+    <form id="formFiltro">
+        <label for="cpf">Informe o CPF do certificado:</label>
+        <input type="text" id="cpf" name="cpf" required maxlength="14" placeholder="Ex: 00000000000">
+        <span class="error-message" id="errorCpf">Insira somente os números do CPF</span>
+        <label for="nome">Nome completo registrado neste CPF:</label>
+        <input type="text" id="nome" name="nome" placeholder="Insira corretamente o nome registrado neste CPF, que deseja consultar">
+        <button type="submit">VERIFICAR</button>
+    </form>
+
+    <table id="minhaTabela">
+        <thead>
+            <tr>
+                <th>CPF</th>
+                <th>Nome</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- As linhas da tabela serão geradas pelo JavaScript -->
+        </tbody>
+    </table>
+
+    <script>/*  TABELA ONDE SERÃO LANÇADO OS DADOS*/
+        const dados = [
+            { cpf: "123.456.789-00", nome: "João Lopez da Silva", url: "https://www.depa.eb.mil.br/images/chancela/123.456.789-00.pdf" },
+            { cpf: "234.567.890-11", nome: "Maria", url: "https://www.example.com/maria" },
+            { cpf: "345.678.901-22", nome: "Pedro", url: "https://www.example.com/pedro" },
+            { cpf: "137.196.417-32", nome: "Cristian Pereira da Silva", url: "https://www.example.com/pedro" }
+        ];
+
+        function formatarCPF(cpf) {
+            return cpf.replace(/\D/g, '')
+                      .replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
+        }
+
+        function normalizarTexto(texto) {
+            return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        }
+
+        function criarTabela(dados) {
+            const tabela = document.querySelector('#minhaTabela tbody');
+            dados.forEach(({cpf, nome, url}) => {
+                const linha = tabela.insertRow();
+                linha.classList.add('oculto');
+                linha.innerHTML = `<td>${cpf}</td><td>${nome}</td><td>${url}</td>`;
+            });
+        }
+
+        function validarCPF(cpf) {
+            return /^\d{11}$/.test(cpf);
+        }
+
+        function filtrarTabela(event) {
+            event.preventDefault();
+
+            const cpf = document.getElementById('cpf').value.replace(/\D/g, '');
+            const nome = normalizarTexto(document.getElementById('nome').value.trim());
+
+            const linhas = document.querySelectorAll('#minhaTabela tbody tr');
+            const errorCpf = document.getElementById('errorCpf');
+            let encontrou = false;
+            let urlParaRedirecionar = '';
+
+            if (!validarCPF(cpf)) {
+                errorCpf.style.display = 'inline';
+                return;
+            } else {
+                errorCpf.style.display = 'none';
+            }
+
+            linhas.forEach(linha => {
+                const [celulaCpf, celulaNome, celulaUrl] = Array.from(linha.cells).map(cell => cell.textContent.trim());
+                const mostrar = (cpf === "" || cpf === celulaCpf.replace(/\D/g, '')) &&
+                                (nome === "" || normalizarTexto(celulaNome) === nome);
+                
+                if (mostrar) {
+                    linha.classList.remove('oculto');
+                    encontrou = true;
+                    urlParaRedirecionar = celulaUrl;
+                } else {
+                    linha.classList.add('oculto');
+                }
+            });
+
+            if (encontrou) {
+                window.open(urlParaRedirecionar, '_blank');
+            } else {
+                alert('Não foram encontrados resultados com os parâmetros informados. Favor verificar os dados inseridos e tentar novamente.');
+            }
+        }
+
+        document.getElementById('formFiltro').addEventListener('submit', filtrarTabela);
+        document.getElementById('cpf').addEventListener('input', function() {
+            this.value = formatarCPF(this.value.replace(/\D/g, '').slice(0, 11));
+            const errorCpf = document.getElementById('errorCpf');
+            errorCpf.style.display = validarCPF(this.value.replace(/\D/g, '')) ? 'none' : 'inline';
+        });
+
+        criarTabela(dados);
+    </script>
+</body>
+</html>

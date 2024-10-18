@@ -1,0 +1,11 @@
+.menu{
+    background-color: #00420C;
+    padding: 8px;
+}
+
+.menu__lista{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 34%;
+    list-style:none;
+}

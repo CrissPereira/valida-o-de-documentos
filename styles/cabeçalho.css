@@ -1,0 +1,43 @@
+
+ .Governo{
+   background-color: #7F7F7F;
+   padding: 2px;
+ }
+
+ .links{
+   color: #ffffff;
+   font-size: 0.90em;
+   font-weight: 400;
+   padding: 0 5px 0 25px;
+   font-family: sans-serif;
+   text-decoration: none;
+ }
+
+ .caixa{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family:"Open Sans", sans-serif;;
+    background-color:#0B6C1D; ;
+    padding: 15px 0;
+ }
+
+ .Informação{
+    color: #ffffff;
+ }
+
+ .Inicio__texto__menor{
+    font-size: 0.75em;
+    font-weight: 400;
+ }
+
+ .Inicio__titulo{
+    font-size: 1.3em;
+    font-weight: 800;
+    margin: 2px 0 10px 0;
+ }
+
+ .Inicio__texto__maior{
+    font-size: 1em;
+    font-weight: 400;
+ }
