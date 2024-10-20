@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validação de Certificado</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
     <header class="Inicio">
@@ -24,32 +23,18 @@
     </header>
 
     <nav class="menu">
-        
         <ul class="menu__lista">
-            <li>
-                <a href="https://www.depa.eb.mil.br/perguntas-frequentes" class="links">Perguntas frequentes</a>
-            </li>
-            <li>
-                <a href="https://www.depa.eb.mil.br/fale-conosco" class="links">Fale Conosco</a>
-            </li>
-            <li>
-                <a href="https://avadepa.cmm.eb.mil.br/" class="links">AVA</a>
-            </li>
-            <li>
-                <a href="https://www.depa.eb.mil.br/link" class="links">Link</a>
-            </li>
-            <li>
-                <a href="https://www.eb.mil.br/" class="links">Exército</a>
-            </li>
-            <li>
-                <a href="https://www.eb.mil.br/web/rp/junte-se-a-nos" class="links">Junte-se a nós</a>
-            </li>
+            <li><a href="https://www.depa.eb.mil.br/perguntas-frequentes" class="links">Perguntas frequentes</a></li>
+            <li><a href="https://www.depa.eb.mil.br/fale-conosco" class="links">Fale Conosco</a></li>
+            <li><a href="https://avadepa.cmm.eb.mil.br/" class="links">AVA</a></li>
+            <li><a href="https://www.depa.eb.mil.br/link" class="links">Link</a></li>
+            <li><a href="https://www.eb.mil.br/" class="links">Exército</a></li>
+            <li><a href="https://www.eb.mil.br/web/rp/junte-se-a-nos" class="links">Junte-se a nós</a></li>
         </ul>
     </nav>
-        
 
     <section class="dicas">
-        <h1 class="dicas__titulo">Validação de <span>Documentos</span> </h1>
+        <h1 class="dicas__titulo">Validação de <span>Documentos</span></h1>
         <p class="dicas__texto">Preencha apenas os campos correspondentes ao documento que você deseja validar. Não é necessário fazer login.</p>
         <p class="dicas__dicas">Dicas:</p>
         <p class="dicas__texto">• Atenção para não confundir o número "1" com a letra "L" minúscula ou a letra "o" com o número zero.</p>
@@ -79,11 +64,8 @@
         </tbody>
     </table>
 
-    <script>/*  TABELA ONDE SERÃO LANÇADO OS DADOS*/
+    <script>
         const dados = [
-            { cpf: "123.456.789-00", nome: "João Lopez da Silva", url: "https://www.depa.eb.mil.br/images/chancela/123.456.789-00.pdf" },
-            { cpf: "234.567.890-11", nome: "Maria", url: "https://www.example.com/maria" },
-            { cpf: "345.678.901-22", nome: "Pedro", url: "https://www.example.com/pedro" },
             { cpf: "137.196.417-32", nome: "Cristian Pereira da Silva", url:"comprovantes/cristianpereiradasilva.html" }
         ];
 
@@ -146,6 +128,11 @@
             } else {
                 alert('Não foram encontrados resultados com os parâmetros informados. Favor verificar os dados inseridos e tentar novamente.');
             }
+
+            // Limpa os campos e redefine o foco
+            document.getElementById('cpf').value = '';
+            document.getElementById('nome').value = '';
+            document.getElementById('cpf').focus();
         }
 
         document.getElementById('formFiltro').addEventListener('submit', filtrarTabela);
