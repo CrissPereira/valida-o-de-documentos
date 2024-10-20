@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validação de C</title>
+    <title>Validação de Certificado</title>
     <link rel="stylesheet" href="style.css">
     
 </head>
@@ -49,11 +49,12 @@
         
 
     <section class="dicas">
-        <h1 class="dicas__titulo">Validação de Documentos </h1>
+        <h1 class="dicas__titulo">Validação de <span>Documentos</span> </h1>
         <p class="dicas__texto">Preencha apenas os campos correspondentes ao documento que você deseja validar. Não é necessário fazer login.</p>
         <p class="dicas__dicas">Dicas:</p>
         <p class="dicas__texto">• Atenção para não confundir o número "1" com a letra "L" minúscula ou a letra "o" com o número zero.</p>
         <p class="dicas__texto">• Atenção ao campo CPF, insira somente os 11 dígitos numéricos que deseja consultar.</p>
+        <p class="dicas__texto">• Atenção Insira o Nome Completo do Aluno.</p>
     </section>
 
     <form id="formFiltro">
@@ -83,7 +84,7 @@
             { cpf: "123.456.789-00", nome: "João Lopez da Silva", url: "https://www.depa.eb.mil.br/images/chancela/123.456.789-00.pdf" },
             { cpf: "234.567.890-11", nome: "Maria", url: "https://www.example.com/maria" },
             { cpf: "345.678.901-22", nome: "Pedro", url: "https://www.example.com/pedro" },
-            { cpf: "137.196.417-32", nome: "Cristian Pereira da Silva", url:"#" }
+            { cpf: "137.196.417-32", nome: "Cristian Pereira da Silva", url:"comprovantes/cristianpereiradasilva.html" }
         ];
 
         function formatarCPF(cpf) {

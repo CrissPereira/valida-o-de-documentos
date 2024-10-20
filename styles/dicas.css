@@ -1,19 +1,19 @@
     .dicas {
         display: flex;
         flex-direction: column;
-        margin: 4% 26% 2% 26%;
+        margin: 4% 30% 2% 30%;
         padding: 25px;
         border-radius: 10px;
         box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.192);
         gap: 20px;
         background-color:#e9ebebce;
-        font-family:"Open Sans", sans-serif;;
+        font-family:"Open Sans", sans-serif;
     }
 
     .dicas__titulo{
         text-align: center;
         font-size: 2em;
-        font-weight: 500;
+        font-weight: 600;
     }
 
     .dicas__texto{

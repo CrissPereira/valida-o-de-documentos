@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprovante de inscrição</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+
+    <header class="Inicio">
+        <div class="Governo">
+            <a href="https://www.gov.br/pt-br" class="links">Portal do Governo Brasileiro</a>
+            <a href="#" class="links">Atualize sua Barra de Governo</a>
+        </div>
+        <section class="Inicio caixa">
+            <img src="http://intranet.depa.eb.mil.br/images/imagens/DEPA.png" alt="Símbolo da DEPA">
+            <div class="Inicio Informação">
+                <p class="Inicio__texto__menor">Ministério da Defesa - Exército Brasileiro - DECEx</p>
+                <h2 class="Inicio__titulo">Diretoria de Educação Preparatória e Assistencial</h2>
+                <p class="Inicio__texto__maior">"SISTEMA COLÉGIO MILITAR DO BRASIL"</p>
+            </div>
+        </section>  
+    </header>
+
+    <nav class="menu">
+        <ul class="menu__lista">
+            <li><a href="https://www.depa.eb.mil.br/perguntas-frequentes" class="links">Perguntas frequentes</a></li>
+            <li><a href="https://www.depa.eb.mil.br/fale-conosco" class="links">Fale Conosco</a></li>
+            <li><a href="https://avadepa.cmm.eb.mil.br/" class="links">AVA</a></li>
+            <li><a href="https://www.depa.eb.mil.br/link" class="links">Link</a></li>
+            <li><a href="https://www.eb.mil.br/" class="links">Exército</a></li>
+            <li><a href="https://www.eb.mil.br/web/rp/junte-se-a-nos" class="links">Junte-se a nós</a></li>
+        </ul>
+    </nav>
+
+    <section class="comprovante">
+        <h2 class="comprovante__titulo">VALIDAÇÃO DE <span>DOCUMENTOS</span></h2>
+        <div class="comprovante__conteudo">
+            <h1>Comprovante de inscrição</h1>
+            <h3>Código</h3>
+            <p>137.196.417-32</p>
+            <h3>Realizado por:</h3>
+            <p>Cristian Pereira da Silva</p>
+            <h3>Curso:</h3>
+            <p>Gestão de Tecnologia da informação</p>
+            <h3>Data da inscrição</h3>
+            <p>05/01/2021</p>
+        </div>
+        <canvas id="qrcode"></canvas> <!-- Canvas para o QR Code -->
+    </section>
+
+    <script>
+        var qr = new QRious({
+            element: document.getElementById('qrcode'),
+            value: 'http://127.0.0.1:5500/comprovantes/cristianpereiradasilva.html', // Substitua pelo URL que você deseja codificar
+            size: 150 // Tamanho do QR Code
+        });
+    </script>
+</body>
+</html>
