@@ -19,6 +19,27 @@
     font-family:"Open Sans", sans-serif;
 }
 
+.comprovante__final{
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.comprovante__final>a{
+    text-decoration: none; 
+    background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+        .comprovante__final>a:hover {
+            background-color: #0056b3;
+        }
+
 @media screen and (max-width: 650px) {
     
              
@@ -51,6 +72,13 @@
       margin: 4% 5% 2% 5%;
   }
 
+  .comprovante{
+                
+    margin: 5% 10% 0% 10%;
+    padding: 25px;
+    border-radius: 8px; 
+}
+
   .dicas__titulo{
       text-align: center;
       font-size: 2em;
@@ -65,41 +93,17 @@
       font-size: 1.2em;
       font-weight: 600;
   }
- 
+
+  .comprovante__final{
+    
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10%;
+  }
+
 }
 
-@media screen and (max-width: 650px) {
-             
-              .caixa{
-                 padding: 15px 8px;
-              }
-
-              .logo__depa{
-                height: 30%;
-              }
-              .Inicio__texto__menor{
-                 font-size: 0.80em;
-                 
-              }
-              .Inicio__titulo{
-                 font-size: 1.0em;
-                 margin: 5px 0 5px 0;
-              }
-            
-             .menu__lista{
-                flex-wrap: wrap;
-                margin: 0;
-                padding: 2px;
-                justify-content: center;
-                gap:20px ; 
-            }  
-            .comprovante{
-                
-                margin: 5% 10% 0% 10%;
-                padding: 25px;
-                border-radius: 8px; 
-            }
-        }
 
 
 
