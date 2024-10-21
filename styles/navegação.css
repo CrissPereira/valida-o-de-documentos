@@ -6,6 +6,7 @@
 .menu__lista{
     display: flex;
     justify-content: space-between;
-    margin: 0 34%;
+    margin: 0 25%;
     list-style:none;
 }
+

@@ -1,14 +1,13 @@
 
  .Governo{
    background-color: #7F7F7F;
-   padding: 2px;
+   padding: 3px;
  }
 
  .links{
    color: #ffffff;
    font-size: 0.90em;
    font-weight: 400;
-   padding: 0 5px 0 25px;
    font-family: sans-serif;
    text-decoration: none;
  }

@@ -2,8 +2,7 @@
     background-color: #e9ebebce;
     margin: 1% 35% 1% 35%;
     padding: 25px;
-    border-radius: 8px;
-    
+    border-radius: 8px; 
 }
 
 .comprovante__titulo{
@@ -19,6 +18,88 @@
     margin: 7% 0 2% 0;
     font-family:"Open Sans", sans-serif;
 }
+
+@media screen and (max-width: 650px) {
+    
+             
+    .caixa{
+       padding: 15px 8px;
+    }
+
+    .logo__depa{
+      height: 30%;
+    }
+    .Inicio__texto__menor{
+       font-size: 0.80em;
+       
+    }
+    .Inicio__titulo{
+       font-size: 1.0em;
+       margin: 5px 0 5px 0;
+    }
+  
+   .menu__lista{
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 2px;
+      justify-content: center;
+      gap:20px ; 
+  }  
+  
+  .dicas {
+      margin: 4% 5% 2% 5%;
+  }
+
+  .dicas__titulo{
+      text-align: center;
+      font-size: 2em;
+      font-weight: 600;
+  }
+
+  .dicas__texto{
+      font-weight: 400;
+  }
+
+  .dicas__dicas{
+      font-size: 1.2em;
+      font-weight: 600;
+  }
+ 
+}
+
+@media screen and (max-width: 650px) {
+             
+              .caixa{
+                 padding: 15px 8px;
+              }
+
+              .logo__depa{
+                height: 30%;
+              }
+              .Inicio__texto__menor{
+                 font-size: 0.80em;
+                 
+              }
+              .Inicio__titulo{
+                 font-size: 1.0em;
+                 margin: 5px 0 5px 0;
+              }
+            
+             .menu__lista{
+                flex-wrap: wrap;
+                margin: 0;
+                padding: 2px;
+                justify-content: center;
+                gap:20px ; 
+            }  
+            .comprovante{
+                
+                margin: 5% 10% 0% 10%;
+                padding: 25px;
+                border-radius: 8px; 
+            }
+        }
+
 
 
     
