@@ -46,8 +46,6 @@
         <label for="cpf">Informe o CPF:</label>
         <input type="text" id="cpf" name="cpf" required maxlength="14" placeholder="ex: 00000000000">
         <span class="error-message" id="errorCpf">Insira somente os números do CPF</span>
-        <label for="nome">Nome :</label>
-        <input type="text" id="nome" name="nome" placeholder="Insira corretamente o nome completo, que deseja consultar">
         <button type="submit">VERIFICAR</button>
     </form>
 
@@ -55,7 +53,6 @@
         <thead>
             <tr>
                 <th>CPF</th>
-                <th>Nome</th>
                 <th>URL</th>
             </tr>
         </thead>
@@ -66,7 +63,7 @@
 
     <script>
         const dados = [
-            { cpf: "137.196.417-32", nome: "Cristian Pereira da Silva", url:"comprovantes/cristianpereiradasilva.html" }
+            { cpf: "000.000.000-00", url:"comprovantes/testecomprovante.html" }
         ];
 
         function formatarCPF(cpf) {
@@ -74,16 +71,12 @@
                       .replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
         }
 
-        function normalizarTexto(texto) {
-            return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-        }
-
         function criarTabela(dados) {
             const tabela = document.querySelector('#minhaTabela tbody');
-            dados.forEach(({cpf, nome, url}) => {
+            dados.forEach(({cpf, url}) => {
                 const linha = tabela.insertRow();
                 linha.classList.add('oculto');
-                linha.innerHTML = `<td>${cpf}</td><td>${nome}</td><td>${url}</td>`;
+                linha.innerHTML = `<td>${cpf}</td><td>${url}</td>`;
             });
         }
 
@@ -95,8 +88,6 @@
             event.preventDefault();
 
             const cpf = document.getElementById('cpf').value.replace(/\D/g, '');
-            const nome = normalizarTexto(document.getElementById('nome').value.trim());
-
             const linhas = document.querySelectorAll('#minhaTabela tbody tr');
             const errorCpf = document.getElementById('errorCpf');
             let encontrou = false;
@@ -110,9 +101,8 @@
             }
 
             linhas.forEach(linha => {
-                const [celulaCpf, celulaNome, celulaUrl] = Array.from(linha.cells).map(cell => cell.textContent.trim());
-                const mostrar = (cpf === "" || cpf === celulaCpf.replace(/\D/g, '')) &&
-                                (nome === "" || normalizarTexto(celulaNome) === nome);
+                const [celulaCpf, celulaUrl] = Array.from(linha.cells).map(cell => cell.textContent.trim());
+                const mostrar = (cpf === "" || cpf === celulaCpf.replace(/\D/g, ''));
                 
                 if (mostrar) {
                     linha.classList.remove('oculto');
@@ -131,7 +121,6 @@
 
             // Limpa os campos e redefine o foco
             document.getElementById('cpf').value = '';
-            document.getElementById('nome').value = '';
             document.getElementById('cpf').focus();
         }
 
