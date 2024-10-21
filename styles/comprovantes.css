@@ -24,10 +24,11 @@
              
     .caixa{
        padding: 15px 8px;
+       align-items: center;
     }
 
     .logo__depa{
-      height: 30%;
+      height: 30%; 
     }
     .Inicio__texto__menor{
        font-size: 0.80em;
