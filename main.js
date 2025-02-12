@@ -52,7 +52,7 @@ function filtrarTabela(event) {
     });
 
     if (encontrou) {
-        window.open(urlParaRedirecionar, '_blank');
+        window.location.href = urlParaRedirecionar; 
     } else {
         alert('Não foram encontrados resultados com os parâmetros informados. Favor verificar os dados inseridos e tentar novamente.');
     }
