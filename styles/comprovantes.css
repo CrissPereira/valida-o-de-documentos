@@ -108,7 +108,8 @@ align-items: center;
                 
     margin: 5% 10% 0% 10%;
     padding: 25px;
-    border-radius: 8px; 
+    border-radius: 8px;
+    font-size: 0.5em; 
 }
 
   .dicas__titulo{
@@ -134,9 +135,10 @@ align-items: center;
     margin-top: 10%;
   }
 
+  .botoes__botao{
+    font-size: 1em;
+  }
+
 }
-
-
-
 
     
