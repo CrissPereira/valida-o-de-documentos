@@ -1,14 +1,19 @@
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+    margin-bottom: 5%;
+}
+
 .comprovante{
     background-color: #e9ebebce;
-    margin: 2% 30% 2% 30%;
     padding: 25px;
     border-radius: 8px; 
+    margin: 2% 33% 0% 33%;
     
 }
 .cabeçalho{
-display: flex;
-flex-direction: column;
-align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cabeçalho__logo{
@@ -17,7 +22,6 @@ align-items: center;
 }
 .cabeçalho__texto{
     margin: 1px ;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 700;
     font-size: 0.8em;
 }
@@ -34,7 +38,6 @@ align-items: center;
     flex-direction: column;
     gap: 30px;
     margin: 7% 0 2% 0;
-    font-family:"Open Sans", sans-serif;
 }
 
 .dados{
@@ -47,7 +50,6 @@ align-items: center;
     display: flex;
     align-items: center;
     gap: 20px;
-    font-family:"Open Sans", sans-serif;
     margin: 10% 0;     
 }
  .botoes{
@@ -58,13 +60,13 @@ align-items: center;
 .botoes__botao{
     text-decoration: none; 
     background-color: #007BFF;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            margin-top: 5px;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10%;
 }
 .botoes__botao:hover {
     background-color: #0056b3;
@@ -81,7 +83,7 @@ align-items: center;
     }
 
     .logo__depa{
-      height: 30%; 
+       height: 30%; 
     }
     .Inicio__texto__menor{
        font-size: 0.80em;
@@ -125,14 +127,6 @@ align-items: center;
   .dicas__dicas{
       font-size: 1.2em;
       font-weight: 600;
-  }
-
-  .comprovante__final{
-    
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    margin-top: 10%;
   }
 
   .botoes__botao{

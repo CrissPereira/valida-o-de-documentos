@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprovante de inscrição</title>
     <link rel="stylesheet" href="../style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>-->
 </head>
 <body>
 
@@ -67,28 +67,27 @@
                 </li>
             </ul>
 
-            <p><strong>FUNDAMENTAÇÃ LEGAL:</strong> &nbsp;Acordo de Reconhecimento Mútuo de Certificados de Assinatura Digital de Mercosul, de 5 de dezembro de 2019, promulgado pelo Decreto nº 12.376, de fevereiro de 2025.</p>
+            <p><strong>FUNDAMENTAÇÃO LEGAL:</strong> &nbsp;Acordo de Reconhecimento Mútuo de Certificados de Assinatura Digital de Mercosul, de 5 de dezembro de 2019, promulgado pelo Decreto nº 12.376, de fevereiro de 2025.</p>
 
         </div>
 
-        <div class="comprovante__final">
-            <canvas id="qrcode"></canvas> <!-- Canvas para o QR Code -->
-            <p>O presente documentoi pode ter a sua validade comprovada acessando o Qr Code à esquerda, ou, caso desejar informando o código 22803000315 na página eletrônica <a href="https://www.depa.eb.mil.br/">https://www.depa.eb.mil.br/</a></p>
-        </div>
+        
+            <!--<canvas id="qrcode"></canvas>  Canvas para o QR Code -->
+            
 
         <div class= botoes>
             <a class="botoes__botao" href="../index.html">NOVA CONSULTA</a>
-            <a class="botoes__botao" href="../certificados/22803000315.pdf" downLoad>DOWNLOAD CERTIFICADO</a>
+            <a class="botoes__botao" href="../certificados/22803000315.pdf" downLoad>DOWNLOAD CHANCELA</a>
         </div>
        
     </section>
 
-    <script>
+    <!--<script>
         var qr = new QRious({
             element: document.getElementById('qrcode'),
             value: 'https://valida-o-de-documentos.vercel.app/comprovantes/22803000315.html', // Substitua pelo URL que você deseja codificar
             size: 100 // Tamanho do QR Code
         });
-    </script>
+    </script>-->
 </body>
 </html>
