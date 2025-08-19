@@ -1,6 +1,6 @@
+
 const dados = [
-    { cpf: "000.000.000-00", url:"comprovantes/testecomprovante.html",
-      cpf: "228.030.003-15", url:"comprovantes/22803000315.html"
+    { cpf: "000.000.000-00", url:"comprovantes/00000000000.html"
      }
 ];
 
